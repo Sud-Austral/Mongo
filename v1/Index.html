@@ -11,143 +11,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <!-- Link del CSS -->
-    <link rel="stylesheet" type="text/css" href="style/base.css?76543454634345">
-    <!-- Agrupación de puntos -->
-    <link rel="stylesheet" type="text/css" href="dist/MarkerCluster.css">
-    <link rel="stylesheet" type="text/css" href="dist/MarkerCluster.Default.css">
-    <link rel="stylesheet" type="text/css" href="sideMenu/sideMenu.css">
     
-    <script src="dist/leaflet.markercluster-src.js"></script>
-    <script src="dist/leaflet-providers.js"></script>
-    <script src="dist/save/FileSaver.js"></script>
-    <script src="sideMenu/sideMenu.js?76543454634345"></script>
+   
 </head>
 <body>  
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" 
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" id="ModalContent">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Instrucciones</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <iframe id="videoModal" 
-                width="560" height="315" src="https://www.youtube.com/embed/Acf1wsLSw08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    <!-- END Modal -->
-    <div id="mySidenav" class="sidenav" style="z-index: 999999999999999999999999;">
-        <a  style="margin-bottom: 50px;"
-        href="javascript:void(0)" class="closebtn" onclick="closeNav();closeNav2()">&times;</a>
-        <label id="ComunasLabelSideMenu" >
-            <p onclick="slideToggleSideMenu('div-input-comunas')">  Comunas </p>   
-            <p id="marcar_todo" onclick="marcar_comunas()">
-                Marcar todas las comunas</p>
-        </label>
-        <div id="div-input-comunas">
-          <h1>Nada</h1>
-        </div>
-      </div>
-      <div id="mySidenav2" class="sidenav2" style="z-index: 999999999999999999999999;">
-        <a  style="margin-bottom: 50px;"
-        href="javascript:void(0)" class="closebtn" onclick="closeNav();closeNav2()">&times;</a>
-        <label id="ComunasLabelSideMenu" onclick="slideToggleSideMenu('div-input-capas')"
-        style="margin-top: 0;">
-            <p>Capas</p>
-        </label>
-        <div id="div-input-capas"></div>    
-      </div>
-    <!--
-    <div class="loader">
-    </div>
-    -->
-    <div id="mapid" class="landscape">
-        <div id="menu">
-            <ul>
-                <li onclick="openNav();openNav2();" style="cursor:pointer;background-color: red;">&#9776; Abrir </li>
-                <li onclick="marcarTodoComuna(this);">Ocultar comunas</li>
-                <li onclick="print(window);">Imprimir</li>
-                <li onclick="Download();">Descargar</li>
-                <li onclick="desmarcar_ckeck();">Limpiar</li>
-                <li data-toggle="modal" data-target="#exampleModal">
-                    Instrucciones
-                </li>
-            </ul>
-        </div>
-    </div>
-    <script>
-        function Download(){
-            let data =  general2.layerCollection.filter(x => Object.keys(x.data).length > 0);
-            let dataAcumulador = []
-            data.forEach(x =>{
-                Object.keys(x.data).forEach(y =>{
-                    //console.log(x.data[y])
-                    dataAcumulador = dataAcumulador.concat(x.data[y].data.features);
-                })
-            })
-            //var data = dataCapaGlobal
-            /*
-            data.forEach(element => {
-                delete element.idcapa;
-                delete element["url_ícono"];
-                delete element["url"];    
-                delete element["urlData"];
-            });;
-            */
-            var fileName = 'Mapa.json';
-            let final = {"type": 'FeatureCollection',"features":dataAcumulador}
-            // Create a blob of the data
-            var fileToSave = new Blob([JSON.stringify(final)], {
-                type: 'application/json'
-            });
-            // Save the file
-            saveAs(fileToSave, fileName);
-        }
-    </script>
-<!--
-    <script src="data/dataGlobal3.json"></script>
-<script src="data/dataCapa3.json"></script>
-<script src="data/dataIcono1.json?101"></script>
-<script src="data/dataColor1.json?101"></script>
-<script src="data2.json"></script>
--->
-<script src="data/colores.js"></script>
-<script src="data/iconos.js"></script>
-<!--
-<script src="script/initial.js?103"></script>
-<script src="script/map_render.js"></script>
-<script src="script/layer.js?76543454634345"></script>
--->
-<script src="layers/layerUtil.js?76543454634345"></script>
-<script src="layers/allLayers.js?76543454634345"></script>
-<script src="layers/layer.js?76543454634345"></script>
-
-<script src="script/library_map.js?76543454634345"></script>
-<!-- Funciones para armar los mapas-->
-<script src="script/library_map2.js?76543454634345"></script>
-<!-- Funciones generales y variables para armar los mapas-->
-<script src="script/general_var.js?76543454634345"></script>
-
-<script src="script/clases.js?76543454634345"></script>
-
-<script src="script/test.js?76543454634345"></script>
-<script src="script/legend.js?76543454634345"></script>
-<script src="script/showLayer.js?76543454634345"></script>
+    <h1>Hola</h1>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<script>console.log(76543454634345)</script>
+
 </body>
 </html>
 
