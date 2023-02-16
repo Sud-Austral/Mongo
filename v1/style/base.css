@@ -1,0 +1,384 @@
+.leaflet-control-layers-overlays {
+    line-height: 0 !important;   
+}
+
+.custom .leaflet-popup-tip {
+    display: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html, body, #mapid {
+    height: 100%;
+}
+
+.logo {
+    width: 20%;
+    height: auto;
+}
+
+.banner2 {
+    width: 70%;
+    height: auto;
+}
+
+.legend {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #A9A9A9;
+    box-shadow: 13px 10px 30px -3px rgba(0,0,0,0.47);
+    -webkit-box-shadow: 13px 10px 30px -3px rgba(0,0,0,0.47);
+    -moz-box-shadow: 13px 10px 30px -3px rgba(0,0,0,0.47);
+}
+
+.titleLegend {
+    text-align: center;
+}
+
+.desc1 {
+    background: #fd0000;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+.desc2 {
+    background: #fcdf0a;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+.desc3 {
+    background: #0d99ee;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+.desc4 {
+    background: #3ade29;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+.desc5 {
+    background: #a0a2a0;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+/**/
+
+#menu {
+    top:2vh;
+    font-family: Arial;
+    font-size: 12.5px;
+    text-align: center;
+    z-index: 998;
+    position: fixed;
+    width: 100%;
+    left: 0px; /*A la derecha deje un espacio de 0px*/
+    right: 0px; /*A la izquierda deje un espacio de 0px*/
+    /*bottom: 0px; Abajo deje un espacio de 0px*/
+}
+
+#menu ul li {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFF;
+    padding: 0.6%;
+    cursor: pointer;
+    background-color: #005580;
+    opacity: 1;
+    width: 11%;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#menu ul li:hover {
+    background-color: #004365;
+    cursor: pointer;
+}
+
+#titulo{
+    color: red;
+}
+/*
+.letrasControl{
+    color:red;
+    background-color: #3ade29;
+}
+*/
+
+
+/*
+.comunaID{
+    color: white;
+    background-color: #03a7ab;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1rem !important;
+}*/
+
+.leaflet-top{
+    color: white !important;
+    font-weight: 100;
+    font-size: 1rem !important;
+}
+
+.leaflet-right span{
+    color: white ;
+}
+
+.test > .leaflet-control-layers-selector{
+    transform : scale(1.2) !important;
+    /*width: 40px !important;
+    height: 40px !important;*/
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    /*https://loading.io/*/
+    background: url('loading.svg') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
+/*
+Custom scrollbar leyenda
+*/
+.legendCustom{
+    overflow-x: hidden !important;
+    max-height: 130px;
+    overflow: auto;
+    max-width: 300px;
+    min-width: 200px;
+}
+
+.legendCustom::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      /* Track */
+.legendCustom::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+       
+      /* Handle */
+.legendCustom::-webkit-scrollbar-thumb {
+        background: #888; 
+      }
+      
+      /* Handle on hover */
+.legendCustom::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+/*
+
+*/
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+  .principal {
+    /*
+    width: 85%;*/
+    margin-left: 0.8rem;
+  }
+
+  .principal {
+    /*
+    width: 85%;*/
+    margin-left: 0.8rem;
+    margin-right: 4rem;
+  }
+  .sidebar {
+    width: 2rem;
+  }
+
+  .sidebar2 {
+    /*
+    background-color: #e1dede;
+    border-style: outset;
+    margin-left: auto;
+    */
+    display: block;
+  }
+
+.principal2{
+    width: 90%;
+}
+
+#clickme{
+/*
+border-style: outset;
+*/
+height: 1.9em;
+width: 1.9em;
+}
+
+#clickme2{
+display: none;
+/*
+border-style: outset;
+*/
+height: 1.9em;
+width: 1.9em;
+}
+
+br{margin-bottom:3px;}
+
+
+/*
+Minimizar
+
+     
+    
+*/
+.gg-minimize-alt {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: rotate(-45deg) scale(var(--ggs,0.85));
+    width: 26px;
+    height: 2px;
+    border-left: 10px solid;
+    border-right: 10px solid;
+    margin-top: 0.9rem;
+}
+.gg-minimize-alt::after,
+.gg-minimize-alt::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid;
+    top: -2px
+}
+.gg-minimize-alt::before {
+    border-right: 2px solid;
+    left: -5px;
+    transform: rotate(45deg)
+}
+.gg-minimize-alt::after {
+    border-left: 2px solid;
+    right: -5px;
+    transform: rotate(-45deg)
+}
+
+.bordeMinize{
+    border-style: outset;
+    
+}
+
+
+.gg-math-minus {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 10px
+}
+
+@media print{
+    @page{
+            size: landscape;
+            -webkit-transform: rotate(-90deg) scale(2,2); 
+            -moz-transform:rotate(-90deg) scale(2,2);
+            filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+            height:100vh;
+            page-break-before: avoid;
+            zoom: 50%;
+    }
+}
+
+#imagenLogoMapa{
+    padding-right: 10px;
+    height: 20% ;
+    width: 20%;
+    padding: 5px;
+}
+
+#span_mapa{
+    width: 50%;
+}
+
+#hyper_map{
+    font-size: 10px;
+}
+
+.leaflet-control-attribution .leaflet-control{
+    width: 20px !important;
+}
+
+
+#butonComunas{
+    margin: 5%;
+    margin-left: 10%;
+    display:flex;
+    justify-content: right;
+    align-items: right;
+    /*width: 50%;
+    margin-left: auto;*/
+    font-size: 0.8rem !important;
+}
+
+
+.variableLeyenda{
+    cursor: pointer !important;
+}
+
+.variableLeyenda .tooltiptext {
+    visibility: hidden !important;
+    width: 120px !important;
+    background-color: black !important;
+    color: #fff !important;
+    text-align: center !important;
+    border-radius: 6px !important;
+    padding: 5px 0 !important;
+  
+    /* Position the tooltip */
+    position: absolute !important;
+    z-index: 1 !important;
+  }
+
+  .variableLeyenda:hover .tooltiptext {
+    visibility: visible !important;
+  }
+/*
+ .leaflet-control-layers-list {
+    background-color: white !important;
+  }*/
+.leaflet-marker-icon{
+    z-index: 999999999 !important;
+}
+
+#ModalContent{
+    width: 130%;
+}
+hr{
+    border: 1px solid black !important;
+    margin: 0 !important;
+}
+
+  
+
+
+
+
+
